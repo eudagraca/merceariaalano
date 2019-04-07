@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:background="@color/lightOrange"
+    tools:context="views.ProdutoFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_product"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/product_item_list"
+        android:background="@color/md_white_1000"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

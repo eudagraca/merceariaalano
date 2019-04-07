@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/produtos"
+            android:icon="@drawable/ic_exchange"
+            android:title="Produtos" />
+        <item
+            android:id="@+id/novo_prduto"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Novo Produto" />
+        <item
+            android:id="@+id/historico"
+            android:icon="@drawable/ic_letter"
+            android:title="Historico" />
+        <item
+            android:id="@+id/vendas"
+            android:icon="@drawable/ic_exchange"
+            android:title="Vendas" />
+    </group>
+
+</menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFA96D</color>
+    <color name="colorPrimaryDark">#FF5722</color>
+    <color name="colorAccent">#CDDC39</color>
+
+    <color name="lightOrange">#FFEADD</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="md_red_900">#B71C1C</color>
+    <color name="md_red_A700">#D50000</color>
+    <color name="md_grey_100">#F5F5F5</color>
+    <color name="md_grey_900">#212121</color>
+    <color name="md_black_1000">#000000</color>
+    <color name="md_white_1000">#ffffff</color>
+
+</resources>

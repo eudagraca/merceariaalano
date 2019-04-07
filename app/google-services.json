@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "604311828012",
+    "firebase_url": "https://alano-a785a.firebaseio.com",
+    "project_id": "alano-a785a",
+    "storage_bucket": "alano-a785a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604311828012:android:3b583e3f2c2729ff",
+        "android_client_info": {
+          "package_name": "com.mercearia.alano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604311828012-tvhpn3ikcsufbsv7ne6fs6hnhi6t04rm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mercearia.alano",
+            "certificate_hash": "4af8b9f6ef1f4b7d6e407ec9e128b333e87a7a9e"
+          }
+        },
+        {
+          "client_id": "604311828012-3ikppfdjj28gv50q3jigdma4kh1kc8im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJqIUH5lMgqLVaSiIx5V3IVFWiU1ZtmIM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604311828012-3ikppfdjj28gv50q3jigdma4kh1kc8im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
