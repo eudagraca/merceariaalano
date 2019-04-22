@@ -50,7 +50,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoV
         Produto produto = mProdutoList.get(position);
         holder.tv_id.setText(produto.getId());
         holder.tv_nome.setText(produto.getNome());
-        holder.tv_preco.setText(produto.getPrecoUnitario().toString());
+        holder.tv_preco.setText(String.valueOf(produto.getPrecoVenda()));
     }
 
     @Override

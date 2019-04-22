@@ -27,18 +27,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:textStyle="italic"
             android:text="Euclídio"
-            android:textColor="#fefefe"
-            android:textSize="16sp"
+            android:textColor="@color/md_white_1000"
+            android:textSize="18sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
-            android:id="@+id/textView"
-            android:textSize="14sp"
+            android:id="@+id/v_nr"
+            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000"
+            android:textColor="@color/md_black_1000"
             android:text="+258 845395142" />
     </LinearLayout>
 

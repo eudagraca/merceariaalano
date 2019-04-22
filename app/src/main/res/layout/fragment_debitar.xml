@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".views.DebitarFragment">
+
+    <androidx.cardview.widget.CardView
+        style="@style/Theme.MaterialComponents.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Debitar  produto"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableStart="@drawable/ic_search_black_24dp"
+                            android:backgroundTint="@color/md_white_1000"
+                            android:text="Toque para pesquisar"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/tv_product_selected"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/editext"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:padding="10dp"
+                            android:textColor="@color/md_white_1000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_product_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/md_white_1000"
+                            android:textSize="16sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/edt_quantidade_venda"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Quantidade a debitar"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14sp" />
+
+                            <com.shawnlin.numberpicker.NumberPicker
+                                android:id="@+id/np_quant"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:np_dividerColor="@color/colorPrimary"
+                                app:np_orientation="horizontal"
+                                app:np_selectedTextColor="@color/colorPrimary"
+                                app:np_selectedTextSize="18sp"
+                                app:np_textColor="@color/colorPrimary"
+                                app:np_textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Stock"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_quant"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/tv_priced"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="5dp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_vender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/editext"
+                            android:backgroundTint="@color/colorPrimaryDark"
+                            android:text="Debitar"
+                            android:textAllCaps="false"
+                            android:padding="10dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/md_white_1000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

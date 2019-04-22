@@ -29,4 +29,20 @@
         <item name="background">@color/black_overlay</item>
     </style>
 
+    <style name="DialogAnimations" />
+    <style name="DialogAnimations.SmileWindow">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
+
+    <style name="Widget.MyApp.MyButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSecondary</item>
+    </style>
+
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.Light">
+
+        <item name="materialButtonStyle">@style/Widget.MyApp.MyButton</item>
+
+    </style>
+
 </resources>

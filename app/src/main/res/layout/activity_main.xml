@@ -5,18 +5,20 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/md_white_1000"
     android:fitsSystemWindows="true"
     tools:context=".views.MainActivity"
     tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="@color/md_white_1000"
         android:layout_height="match_parent">
 
         <FrameLayout
             android:id="@+id/framelayout_container"
             android:layout_width="match_parent"
+            android:background="@color/md_white_1000"
             android:layout_height="match_parent">
 
         </FrameLayout>
@@ -28,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 

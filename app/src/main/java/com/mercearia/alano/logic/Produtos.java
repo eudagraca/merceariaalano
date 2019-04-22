@@ -5,31 +5,29 @@ import android.graphics.Color;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.kinda.alert.KAlertDialog;
-import com.mercearia.alano.models.Categoria;
 import com.mercearia.alano.models.Produto;
 import com.mercearia.alano.utils.FirebaseConnect;
-import com.mercearia.alano.utils.MyUtils;
+import com.mercearia.alano.utils.Helper;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LogicaProdutos {
+public class Produtos {
     private Produto produtos;
-    private Categoria categoria;
     private Context context;
     private FirebaseFirestore mFirestore;
     private KAlertDialog pDialog;
-
-    public LogicaProdutos(Produto produtos, Categoria categoria, Context context) {
+    boolean save = false;
+    public Produtos(Produto produtos, Context context) {
         this.produtos = produtos;
-        this.categoria = categoria;
         this.context = context;
         mFirestore = FirebaseConnect.getFireStore(context);
     }
 
-    public void isSaved() {
+    public boolean isSaved() {
+
         pDialog = new KAlertDialog(context, KAlertDialog.PROGRESS_TYPE);
-        pDialog.getProgressHelper().setBarColor(Color.parseColor(MyUtils.COR_SECUNDARIA));
+        pDialog.getProgressHelper().setBarColor(Color.parseColor(Helper.COR_SECUNDARIA));
         pDialog.setTitleText("Loading");
         pDialog.setCancelable(false);
         pDialog.show();
@@ -37,27 +35,45 @@ public class LogicaProdutos {
         // Create a new item
         Map<String, Object> produto = new HashMap<>();
         produto.put("nome", produtos.getNome());
-        produto.put("categoria", categoria.getNome());
         produto.put("precoCompra", produtos.getPrecoCompra());
-        produto.put("quantidade", produtos.getQuantidade());
-        produto.put("precoUnitario", produtos.getPrecoUnitario());
-        produto.put("quantidadeUnitaria", produtos.getQuantidadeUnitaria());
+        produto.put("quantidadeActual", produtos.getQuantidade());
+        produto.put("quantidadeTotal", produtos.getQuantidade());
+        produto.put("precoUnitario", produtos.getPrecoVenda());
         produto.put("dataRegisto", produtos.getDataRegisto());
+        produto.put("lucro", produtos.getLucro());
+        produto.put("valorCaixa", produtos.getValorEmCaixa());
+        produto.put("quantVendida", produtos.getQuantidadeVendida());
 
-
-        mFirestore.collection(MyUtils.COLLECTION_PRODUTOS)
+        mFirestore.collection(Helper.COLLECTION_PRODUTOS)
                 .add(produto)
                 .addOnSuccessListener(documentReference -> {
                     pDialog.dismiss();
                     new KAlertDialog(context, KAlertDialog.SUCCESS_TYPE)
                             .setTitleText("Adiccionou novo produto")
                             .show();
+                    save = true;
+
                 }).addOnFailureListener(e -> {
             pDialog.dismiss();
             new KAlertDialog(context, KAlertDialog.ERROR_TYPE)
                     .setTitleText("Oops...")
                     .setContentText("Algo correu mal. Não foi possível adicionar novo produto!")
                     .show();
+            save = false;
         });
+
+        return save;
+    }
+
+    public boolean isAddQuantity(String pId, int quantidade){
+        mFirestore.collection(Helper.COLLECTION_PRODUTOS).document(pId)
+                .update("quantidadeTotal", quantidade)
+                .addOnSuccessListener(aVoid -> {
+                    save = true;
+                })
+                .addOnFailureListener(e -> {
+                    save = false;
+                });
+        return save;
     }
 }

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.DetailsActivity"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/tv_nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/float_transparent"
+                android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableTint="@color/md_white_1000"
+                android:textColor="@color/md_white_1000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:backgroundTint="@color/colorAccent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quntidade Vendida:"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_quantidade_vendida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preco de Venda: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_preco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_preco_compra_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:backgroundTint="@color/colorAccent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preço da Compra: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_preco_compra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantidade em Stock: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_quantidade_stock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:backgroundTint="@color/colorAccent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lucro Previsto: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_lucro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantidade Inicial: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_qauntIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:backgroundTint="@color/colorAccent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Valor em caixa: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_valor_caixa_prod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="65dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/editext"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adicionado a: "
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_update"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Quantidade a adicionar"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/np_more_quant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical"
+                        app:np_dividerColor="@color/colorPrimary"
+                        app:np_orientation="horizontal"
+                        app:np_selectedTextColor="@color/colorPrimary"
+                        app:np_selectedTextSize="18sp"
+                        app:np_textColor="@color/colorPrimary"
+                        app:np_textSize="14sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="adicionar"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textColor="@color/md_white_1000"
+                        android:background="@drawable/editext"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="bottom"
+                        android:textAllCaps="false"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <Button
+                        android:id="@+id/bt_edit_product"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/float_transparent"
+                        android:drawableStart="@drawable/ic_edit_black_24dp" />
+
+                    <Button
+                        android:id="@+id/bt_add_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:background="@color/float_transparent"
+                        android:drawableStart="@drawable/ic_add_circle_black_24dp" />
+
+
+                    <Button
+                        android:id="@+id/bt_delete_product"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:background="@color/float_transparent"
+                        android:drawableStart="@drawable/ic_delete_sweep_black_24dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

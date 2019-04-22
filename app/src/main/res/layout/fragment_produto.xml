@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_produto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightOrange"
+    android:orientation="vertical"
     tools:context="views.ProdutoFragment">
+
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="Toque para pesquisar"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAllCaps="false"
+        android:background="@color/float_transparent"
+        android:drawableStart="@drawable/ic_search_black_24dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorPrimaryDark" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_product"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/product_item_list"
         android:background="@color/md_white_1000"
         android:scrollbars="vertical"
         android:visibility="visible"
-
-        >
+        tools:listitem="@layout/product_item_list">
 
     </androidx.recyclerview.widget.RecyclerView>
 

@@ -6,65 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".views.RegistoFragment">
 
-    <LinearLayout
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:gravity="center"
-            android:background="@color/lightOrange"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quant = Quantidade"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="P. = Preço"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="P/ = Por"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark" />
-
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:padding="10dp"
                 android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="24sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Registo do Produto"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -75,7 +45,7 @@
 
                 </LinearLayout>
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -85,56 +55,6 @@
                     android:inputType="textPersonName"
                     android:padding="10dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Categoria"
-                    android:textColor="@color/colorPrimaryDark" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_add_categoria"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_add_black_24dp"
-                        android:textColor="@color/colorPrimaryDark" />
-
-                    <TextView
-                        android:id="@+id/tv_save_categoria"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_save_black_24dp"
-                        android:visibility="gone" />
-
-                    <EditText
-                        android:id="@+id/edit_categoria"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/editext"
-                        android:ems="10"
-                        android:hint="Categoria"
-                        android:inputType="text"
-                        android:padding="10dp"
-                        android:visibility="gone" />
-
-                    <Spinner
-                        android:id="@+id/spinner_categoria_reg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/editext" />
-
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -143,19 +63,12 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="165dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="P. de Compra"
+                        android:text="Preço de Compra"
                         android:textColor="@color/colorPrimaryDark" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginStart="10dp"
-                        android:text="P. a vender p/cada"
-                        android:textColor="@color/colorPrimaryDark" />
 
                 </LinearLayout>
 
@@ -163,27 +76,44 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_preco_compra"
-                        android:layout_width="165dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/editext"
-                        android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:padding="10dp" />
-
-                    <EditText
-                        android:id="@+id/edit_preco_unidade"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:background="@drawable/editext"
                         android:ems="10"
                         android:inputType="numberDecimal"
                         android:padding="10dp" />
+
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Preço a vender por cada"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_preco_unidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/editext"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp" />
+            </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -192,19 +122,13 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="165dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="Quant de Compra"
-                        android:textColor="@color/colorPrimaryDark" />
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
                         android:layout_marginStart="10dp"
-                        android:text="Quant p/unidade"
+                        android:text="Quantidade de total"
                         android:textColor="@color/colorPrimaryDark" />
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -213,27 +137,18 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/edit_quantidade_un"
-                        android:layout_width="165dp"
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/np_quantidade"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/editext"
-                        android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:padding="10dp"
-                        app:layout_constraintStart_toStartOf="@+id/spinner_categoria_reg"
-                        app:layout_constraintTop_toBottomOf="@+id/spinner_categoria_reg" />
+                        android:orientation="vertical"
+                        app:np_dividerColor="@color/colorPrimary"
+                        app:np_orientation="horizontal"
+                        app:np_selectedTextColor="@color/colorPrimary"
+                        app:np_selectedTextSize="18sp"
+                        app:np_textColor="@color/colorPrimary"
+                        app:np_textSize="14sp"/>
 
-                    <EditText
-                        android:id="@+id/edit_quantidade"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/editext"
-                        android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:padding="10dp"
-                        android:typeface="sans" />
                 </LinearLayout>
 
                 <Button
@@ -245,7 +160,7 @@
                     android:background="@drawable/editext"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:shadowColor="@color/colorPrimaryDark"
-                    android:text="Guardar registo"
+                    android:text="Registar Produto"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="14sp" />
@@ -253,6 +168,5 @@
             </LinearLayout>
 
         </ScrollView>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </FrameLayout>
