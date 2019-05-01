@@ -2,16 +2,13 @@
 <resources>
     <color name="colorPrimary">#4CAF50</color>
     <color name="colorPrimaryDark">#14801A</color>
-    <color name="colorAccent">#8BC34A</color>
+    <color name="colorAccent">#58D35F</color>
 
-    <color name="lightOrange">#FFEADD</color>
+    <color name="lightGreen">#CCFACD</color>
 
     <color name="black_overlay">#66000000</color>
 
-    <color name="md_red_900">#B71C1C</color>
     <color name="md_red_A700">#D50000</color>
-    <color name="md_grey_100">#F5F5F5</color>
-    <color name="md_grey_900">#212121</color>
     <color name="md_black_1000">#000000</color>
     <color name="md_white_1000">#ffffff</color>
 

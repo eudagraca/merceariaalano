@@ -1,29 +1,38 @@
 <resources>
-    <string name="app_name">Mercearia Alano</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Mercearia</string>
 
-    <string name="title_activity_registo">RegistoActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="open">Open</string>
     <string name="close">Close</string>
 
-    <array name="categorias">
-        <item>Liquidos</item>
-        <item>Higienico</item>
-        <item>Reargas</item>
-        <item>Liquidos</item>
-        <item>Liquidos</item>
-    </array>
-    <string name="title_activity_main2">Main2Activity</string>
-
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_details">DetailsActivity</string>
+
+    <string name="logo">Logo</string>
+    <string name="coloque_o_seu_neg_cio_nos_trilhos">Coloque o seu negócio nos trilhos</string>
+    <string name="a_tua_informa_o_segura_e_em_tempo_real">A tua informação segura e em tempo real</string>
+
+    <string name="valor_arrecadado">Confira o valor arrecadano nas suas vendas</string>
+    <string name="bank">Bank</string>
+    <string name="meticais">Meticais</string>
+    <string name="balanco">Balanço</string>
+    <string name="pesquisar">Toque para pesquisar o produto</string>
+    <string name="quantidade_remanescente">Quantidade remanescente</string>
+    <string name="stock">Stock</string>
+    <string name="debitar">Debitar</string>
+    <string name="balanceie_stock">Balanceie o seu stock de acordo com a sua realidade</string>
+
+    <string name="title_activity_access">AccessActivity</string>
+    <string name="acessar">Acessar</string>
+    <string name="codigo_de_acesso">Código de acesso</string>
+    <string name="quntidade_vendida">Quntidade Vendida:</string>
+    <string name="preco_de_venda">Preco de Venda:</string>
+    <string name="preco_da_compra">Preço da Compra:</string>
+    <string name="lucro_previsto">Lucro Previsto:</string>
+    <string name="quantidade_inicial">Quantidade Inicial:</string>
+    <string name="valor_em_caixa">Valor em caixa:</string>
+    <string name="adicionado_a">Adicionado a:</string>
+    <string name="reiniciar_o_balcao">Reiniciar o balcão</string>
+
 </resources>

@@ -3,47 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    tools:context=".views.DebitarFragment">
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".views.fragments.DebitarFragment">
+
 
     <androidx.cardview.widget.CardView
-        style="@style/Theme.MaterialComponents.Light"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:padding="10dp"
             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/balanco"
+                android:paddingTop="30dp"
+                android:src="@drawable/ic_balance_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/balanceie_stock"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark" />
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="UselessParent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="Debitar  produto"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/colorPrimaryDark" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -58,7 +64,7 @@
                             android:layout_marginTop="10dp"
                             android:drawableStart="@drawable/ic_search_black_24dp"
                             android:backgroundTint="@color/md_white_1000"
-                            android:text="Toque para pesquisar"
+                            android:text="@string/pesquisar"
                             android:textAllCaps="false"
                             android:textColor="@color/colorPrimaryDark" />
 
@@ -96,12 +102,10 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/edt_quantidade_venda"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
-                                android:text="Quantidade a debitar"
+                                android:text="@string/quantidade_remanescente"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="14sp" />
 
@@ -120,7 +124,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
+                            android:padding="10dp"
                             android:orientation="vertical">
 
                             <TextView
@@ -129,7 +133,7 @@
                                 android:gravity="center"
                                 android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
-                                android:text="Stock"
+                                android:text="@string/stock"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="14sp" />
 
@@ -159,7 +163,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:paddingTop="10dp"
                         android:orientation="vertical">
 
                         <Button
@@ -167,8 +171,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/editext"
-                            android:backgroundTint="@color/colorPrimaryDark"
-                            android:text="Debitar"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:text="@string/debitar"
                             android:textAllCaps="false"
                             android:padding="10dp"
                             android:textSize="16sp"

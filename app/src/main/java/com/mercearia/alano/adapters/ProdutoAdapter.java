@@ -6,18 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mercearia.alano.R;
 import com.mercearia.alano.models.Produto;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoViewHolder> {
 
-    private Context mContext;
-    private List<Produto> mProdutoList;
+    private final Context mContext;
+    private final List<Produto> mProdutoList;
     private OnItemClick mListener;
 
     public interface OnItemClick {
@@ -60,9 +61,11 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoV
     }
 
     static class produtoViewHolder extends RecyclerView.ViewHolder {
-        private TextView tv_nome, tv_preco, tv_id;
+        private final TextView tv_nome;
+        private final TextView tv_preco;
+        private final TextView tv_id;
 
-        produtoViewHolder(@NonNull View itemView, final OnItemClick itemClick) {
+        produtoViewHolder(@NonNull View itemView, @Nullable final OnItemClick itemClick) {
             super(itemView);
             tv_nome = itemView.findViewById(R.id.tv_nome);
             tv_preco = itemView.findViewById(R.id.tv_price);

@@ -4,22 +4,34 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/produtos"
-            android:icon="@drawable/ic_exchange"
-            android:title="Produtos" />
+            android:id="@+id/vendas"
+            android:icon="@drawable/ic_balance"
+            android:title="Balanco" />
+
+        <item
+            android:id="@+id/historico"
+            android:icon="@drawable/ic_medical_history"
+            android:title="Historico" />
+
+
+        <item
+            android:id="@+id/bank"
+            android:icon="@drawable/ic_smartphone"
+            android:title="Meu Banco" />
+
+
         <item
             android:id="@+id/novo_prduto"
             android:icon="@drawable/ic_add_circle_black_24dp"
             android:title="Novo Produto" />
+
         <item
-            android:id="@+id/historico"
-            android:icon="@drawable/ic_letter"
-            android:title="Historico" />
-        <item
-            android:id="@+id/vendas"
-            android:icon="@drawable/ic_exchange"
-            android:title="Balanco" />
+            android:id="@+id/produtos"
+            android:icon="@drawable/ic_list"
+            android:title="Produtos" />
+
     </group>
 
 </menu>

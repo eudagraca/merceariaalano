@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     android:gravity="bottom"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Light">
 
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
-        app:civ_border="false"
-        android:src="@drawable/edio" />
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_stock" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="Euclídio"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp"
             android:textColor="@color/md_white_1000"
-            android:textSize="18sp"
+            android:text="Alano"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-        <TextView
-            android:id="@+id/v_nr"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/md_black_1000"
-            android:text="+258 845395142" />
     </LinearLayout>
 
 </LinearLayout>

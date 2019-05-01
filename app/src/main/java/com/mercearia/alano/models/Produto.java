@@ -1,5 +1,7 @@
 package com.mercearia.alano.models;
 
+import android.annotation.SuppressLint;
+
 import com.mercearia.alano.utils.Helper;
 
 import java.text.SimpleDateFormat;
@@ -11,9 +13,7 @@ public class Produto {
     private float precoVenda;
     private float precoCompra;
     private int quantidade, quantidadeVendida;
-    private Date date;
     private String data;
-    private float lucro;
     private float valorEmCaixa;
 
     public Produto() {
@@ -64,13 +64,9 @@ public class Produto {
     }
 
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public String getDataRegisto() {
-        SimpleDateFormat formatter = new SimpleDateFormat(Helper.PATTERN_DATE);
-        date = new Date();
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat(Helper.PATTERN_DATE);
+        Date date = new Date();
         return formatter.format(date);
     }
 
@@ -86,16 +82,8 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
     public float getLucro() {
-        return lucro= (getPrecoVenda()*getQuantidade()) - (getPrecoCompra());
-    }
-
-    public void setLucro(float lucro) {
-        this.lucro = lucro;
+        return (getPrecoVenda() * getQuantidade()) - (getPrecoCompra());
     }
 
     public float getValorEmCaixa() {
