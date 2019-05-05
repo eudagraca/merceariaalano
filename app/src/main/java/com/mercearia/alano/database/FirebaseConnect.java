@@ -1,5 +1,6 @@
 package com.mercearia.alano.database;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
@@ -8,6 +9,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FirebaseConnect {
+    @SuppressLint("StaticFieldLeak")
     private static FirebaseFirestore mFirestore;
 
 

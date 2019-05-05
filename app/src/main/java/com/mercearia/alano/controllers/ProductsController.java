@@ -9,28 +9,27 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.kinda.alert.KAlertDialog;
 import com.mercearia.alano.database.FirebaseConnect;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.models.Product;
 import com.mercearia.alano.utils.Helper;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Produtos {
-    private final Produto produtos;
+public class ProductsController {
+    private final Product produtos;
     @NonNull
     private final Context context;
     private final FirebaseFirestore mFirestore;
     private KAlertDialog pDialog;
     private boolean save = true;
 
-    public Produtos(Produto produtos, @NonNull Context context) {
+    public ProductsController(Product produtos, @NonNull Context context) {
         this.produtos = produtos;
         this.context = context;
         mFirestore = FirebaseConnect.getFireStore(context);
     }
 
     public boolean isSaved() {
-
 
         pDialog = new KAlertDialog(context, KAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor(Helper.COR_SECUNDARIA));
@@ -46,7 +45,6 @@ public class Produtos {
         produto.put("quantidadeTotal", produtos.getQuantidade());
         produto.put("precoUnitario", produtos.getPrecoVenda());
         produto.put("dataRegisto", produtos.getDataRegisto());
-        produto.put("lucro", produtos.getLucro());
         produto.put("valorCaixa", produtos.getValorEmCaixa());
         produto.put("quantVendida", produtos.getQuantidadeVendida());
 

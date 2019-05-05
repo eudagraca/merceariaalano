@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/bank"
-        android:paddingTop="50dp"
+        android:paddingTop="10dp"
         android:src="@drawable/ic_bank" />
 
     <androidx.cardview.widget.CardView
@@ -32,7 +32,12 @@
                 android:text="@string/valor_arrecadado"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
 
             <TextView
                 android:layout_width="wrap_content"

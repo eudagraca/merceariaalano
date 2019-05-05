@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_login"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/scode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editext"
+                android:hint="Insira o seu Codigo de Segurança"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btscode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/editext"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/acessar"
+                android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

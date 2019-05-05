@@ -31,7 +31,6 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class HistoryFragment extends Fragment {
 
-
     private final HashSet<String> items = new HashSet<>();
     private RecyclerView recyclerView;
     @Nullable
@@ -64,9 +63,9 @@ public class HistoryFragment extends Fragment {
 
         int orientation = getResources().getConfiguration().orientation;
         LinearLayoutManager layoutManager;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             layoutManager = new GridLayoutManager(context, 2);
-        }else {
+        } else {
             layoutManager = new GridLayoutManager(context, 1);
         }
 
@@ -82,7 +81,6 @@ public class HistoryFragment extends Fragment {
         dialog.setTitleText("");
         dialog.setCancelable(false);
         dialog.show();
-
 
         mFirestore.collection(Helper.COLLECTION_DEBITS).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -108,18 +106,18 @@ public class HistoryFragment extends Fragment {
                         d.show();
 
                         mFirestore.collection(Helper.COLLECTION_PRODUTOS)
-                                .whereEqualTo("nome", item).orderBy("data").get()
+                                .whereEqualTo("nome", item).get()
                                 .addOnSuccessListener(queryDocument -> {
 
                                     for (QueryDocumentSnapshot snapshot : queryDocument) {
                                         Debit debit = new Debit();
 
-                                        debit.setValorCaixa(Double.valueOf(String.valueOf(snapshot.get("valorCaixa"))));
                                         debit.setQuantidadeVendida(Integer.valueOf(String.valueOf(snapshot.get("quantVendida"))));
                                         debit.setQuantidadeRemanescente(Integer.valueOf(String.valueOf(snapshot.get("quantidadeActual"))));
                                         debit.setData(String.valueOf(snapshot.get("data")));
                                         debit.setName(String.valueOf(snapshot.get("nome")));
                                         debitList.add(debit);
+                                        d.dismiss();
                                     }
                                     debitAdapter = new DebitAdapter(context, debitList);
                                     recyclerView.setAdapter(debitAdapter);
@@ -135,7 +133,6 @@ public class HistoryFragment extends Fragment {
                     for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
                         Debit debit = new Debit();
 
-                        debit.setValorCaixa(Double.valueOf(String.valueOf(snapshot.get("valorCaixa"))));
                         debit.setQuantidadeVendida(Integer.valueOf(String.valueOf(snapshot.get("quantVendida"))));
                         debit.setQuantidadeRemanescente(Integer.valueOf(String.valueOf(snapshot.get("quantidadeActual"))));
                         debit.setData(String.valueOf(snapshot.get("data")));
@@ -153,5 +150,6 @@ public class HistoryFragment extends Fragment {
 
         return view;
     }
+
 
 }

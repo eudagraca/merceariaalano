@@ -160,35 +160,13 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:background="@drawable/editext"
+
                     android:backgroundTint="@color/lightGreen"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lucro_previsto"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/tv_lucro"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="70dp"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:background="@drawable/editext"
                     android:orientation="horizontal"
                     android:padding="10dp">
@@ -214,7 +192,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/editext"
-                    android:backgroundTint="@color/lightGreen"
                     android:orientation="horizontal"
                     android:padding="10dp">
 
@@ -238,6 +215,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:backgroundTint="@color/lightGreen"
                     android:background="@drawable/editext"
                     android:orientation="horizontal"
                     android:padding="10dp">

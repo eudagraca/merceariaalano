@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.mercearia.alano.R;
-import com.mercearia.alano.controllers.Produtos;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.controllers.ProductsController;
+import com.mercearia.alano.models.Product;
 import com.mercearia.alano.utils.Helper;
 import com.mercearia.alano.views.activities.MainActivity;
 import com.shawnlin.numberpicker.NumberPicker;
@@ -57,17 +57,16 @@ public class RegistoFragment extends Fragment {
         np_quantidade.setMaxValue(1000);
         np_quantidade.setOnValueChangedListener((picker, oldVal, newVal) -> quantidade = oldVal);
 
-        Produto produto = new Produto();
+        Product product = new Product();
 
         //Save Product
         buttonGravar.setOnClickListener(v -> {
             if (isValid()) {
-                produto.setNome(Objects.requireNonNull(editNome.getText()).toString());
-                produto.setPrecoCompra(Float.parseFloat(Objects.requireNonNull(editPrecoCompra.getText()).toString()));
-                produto.setPrecoVenda(Float.parseFloat((Objects.requireNonNull(editPrecoUnidade.getText()).toString())));
-                produto.setQuantidade(quantidade);
-                Produtos prod = new Produtos(produto, context);
-
+                product.setNome(Objects.requireNonNull(editNome.getText()).toString());
+                product.setPrecoCompra(Float.parseFloat(Objects.requireNonNull(editPrecoCompra.getText()).toString()));
+                product.setPrecoVenda(Float.parseFloat((Objects.requireNonNull(editPrecoUnidade.getText()).toString())));
+                product.setQuantidade(quantidade);
+                ProductsController prod = new ProductsController(product, Objects.requireNonNull(context));
 
                 if (prod.isSaved()) {
                     Intent intent = new Intent(context, MainActivity.class);
@@ -83,7 +82,7 @@ public class RegistoFragment extends Fragment {
     private boolean isValid() {
         boolean isValid = false;
         if (Objects.requireNonNull(editNome.getText()).toString().length() < 6) {
-            editNome.setError("Introduza o nome do Produto");
+            editNome.setError("Introduza o nome do Product");
             editNome.requestFocus();
         } else if (Objects.requireNonNull(editPrecoUnidade.getText()).toString().isEmpty() ||
                 Double.parseDouble(editPrecoUnidade.getText().toString()) <= 0
@@ -96,7 +95,7 @@ public class RegistoFragment extends Fragment {
             editPrecoCompra.setError("Introduza o preço da compra do produto");
             editPrecoCompra.requestFocus();
         } else if (quantidade <= 0) {
-            Helper.alertaNegativa(context, "Defina a quantidade a registar");
+            Helper.alertaNegativa(Objects.requireNonNull(context), "Defina a quantidade a registar");
         } else {
             isValid = true;
         }

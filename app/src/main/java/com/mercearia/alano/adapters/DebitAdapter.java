@@ -41,7 +41,7 @@ public class DebitAdapter extends RecyclerView.Adapter<DebitAdapter.debitAdapter
         holder.tv_nome.setText(debit.getName());
         holder.tv_quantActual.setText(String.valueOf(debit.getQuantidadeRemanescente()));
         holder.tv_quant_Debit.setText(String.valueOf(debit.getQuantidadeVendida()));
-        holder.tv_data.setText(debit.getData());
+        holder.tv_data.setText(String.valueOf(debit.getData()));
     }
 
     @Override

@@ -103,7 +103,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingBottom="10dp"
-                                android:text="Quantos produtos têm no stock?"
+                                android:text="Quantos productsController têm no stock?"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="14sp" />
 

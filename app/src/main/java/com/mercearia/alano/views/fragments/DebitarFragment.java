@@ -20,7 +20,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.kinda.alert.KAlertDialog;
 import com.mercearia.alano.R;
 import com.mercearia.alano.database.FirebaseConnect;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.models.Product;
 import com.mercearia.alano.utils.Helper;
 import com.mercearia.alano.views.activities.MainActivity;
 import com.shawnlin.numberpicker.NumberPicker;
@@ -36,7 +36,7 @@ public class DebitarFragment extends Fragment {
     private TextView tv_quant, tv_productSelected, tv_product_id;
     private TextView textView_preco;
     @NonNull
-    private final Produto p;
+    private final Product p;
     private int quantidade;
     private int quantidadeVendida;
     private NumberPicker numberPicker;
@@ -52,7 +52,7 @@ public class DebitarFragment extends Fragment {
 
     public DebitarFragment() {
         // Required empty public constructor
-        p = new Produto();
+        p = new Product();
     }
 
     @Override
@@ -98,10 +98,10 @@ public class DebitarFragment extends Fragment {
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
-                        Produto produto = new Produto();
-                        produto.setNome((String) snapshot.get("nome"));
-                        produto.setId(snapshot.getId());
-                        produtos.add(produto.getNome());
+                        Product product = new Product();
+                        product.setNome((String) snapshot.get("nome"));
+                        product.setId(snapshot.getId());
+                        produtos.add(product.getNome());
                     }
                     String selec = "Seleccione o produto";
                     String close = "Fechar";
@@ -144,7 +144,7 @@ public class DebitarFragment extends Fragment {
     /**
      * Get quantity of an especific product
      *
-     * @param product
+     * @param product is name of product
      */
     private void getData(String product) {
         pDialog = new KAlertDialog(Objects.requireNonNull(context), KAlertDialog.PROGRESS_TYPE);
@@ -164,6 +164,7 @@ public class DebitarFragment extends Fragment {
                     p.setValorEmCaixa(Float.parseFloat(String.valueOf(snapshot.get("valorCaixa"))));
                     p.setPrecoVenda(Float.parseFloat(String.valueOf(snapshot.get("precoUnitario"))));
                     p.setNome((String) snapshot.get("nome"));
+
                     // Set quantity
                     if (Integer.parseInt(tv_quant.getText().toString()) >= 1) {
                         numberPicker.setMaxValue(quantidade);
@@ -189,20 +190,20 @@ public class DebitarFragment extends Fragment {
         //Subtraindo a  quantidade actual pela quantidade a vender/Debitar
         p.setQuantidade(quantidade - numberPicker.getValue());
 
-        //Guardando a Quantidade Actual do item após a subtracao
+        //Guardando a quantidade actual do item após a subtração
         data.put("quantidadeActual", numberPicker.getValue());
 
         /*
          * @Formula
          *
-         * quantidade que está no Stock - quantidade remanescente na banca
+         * quantidade que está no stock - quantidade remanescente na banca
          *
          * A quantidade em stock será aquela que o usuario vai digitar
          *
          * Stock actual <- 14 - 2 -> passa ser o stock após se concluir o balanço
          *
          *                   14 - 2 = 12 -> Forão vendidos 12
-         *                   E restarão 2
+         *                   E restaram 2
          * */
         data.put("quantVendida", quantidadeVendida + p.getQuantidade());
         data.put("valorCaixa", p.getValorEmCaixa() + (p.getQuantidade() * p.getPrecoVenda()));
@@ -212,7 +213,7 @@ public class DebitarFragment extends Fragment {
             data.put("data", p.getDataRegisto());
             data.put("nome", p.getNome());
 
-            FirebaseFirestore firestore = FirebaseConnect.getFireStore(context);
+            FirebaseFirestore firestore = FirebaseConnect.getFireStore(Objects.requireNonNull(context));
             firestore.collection(Helper.COLLECTION_DEBITS).document(tv_product_id.getText().toString())
                     .set(data).addOnSuccessListener(s -> {
 
@@ -229,6 +230,15 @@ public class DebitarFragment extends Fragment {
 
     private boolean isValid() {
         return !tv_productSelected.getText().toString().equals("");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (pDialog != null && pDialog.isShowing()) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 
 }

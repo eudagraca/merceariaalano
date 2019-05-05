@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="20dp"
         tools:ignore="UselessParent">
 
         <ImageView
@@ -36,14 +37,6 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Registo do Produto"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="24sp" />
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -55,7 +48,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Nome do produto"
+                            android:text="Nome do product"
                             android:textColor="@color/colorPrimaryDark" />
 
                     </LinearLayout>

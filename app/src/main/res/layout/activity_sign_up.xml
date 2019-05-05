@@ -4,40 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:orientation="vertical"
-    android:theme="@style/AppTheme.NoActionBar"
-    android:background="@color/md_white_1000"
-    tools:context=".views.activities.AccessActivity">
+    tools:context=".views.activities.SignUpActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_pincode"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_clipboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:layout_editor_absoluteX="10dp">
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -58,7 +53,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
 
-                android:id="@+id/tv_pass"
+                android:id="@+id/tv_pass_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -69,43 +64,50 @@
                 android:padding="10dp"
                 android:textAlignment="center" />
 
-        </LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
 
+                android:id="@+id/tv_security_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/editext"
+                android:hint="@string/codigo_de_seguranca"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-9dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/rg"
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="--------- Registar ---------"
+            android:text="---------Já tenho uma conta---------"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
-
         <Button
-            android:id="@+id/bt_access"
+            android:id="@+id/bt_signUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/colorAccent"
+            android:background="@drawable/editext"
+            android:backgroundTint="@color/colorAccent"
             android:padding="10dp"
-            android:text="@string/acessar"
+            android:text="Registar Usuário"
             android:textAllCaps="false"
             android:textColor="@color/md_white_1000"
             android:textSize="14sp" />
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

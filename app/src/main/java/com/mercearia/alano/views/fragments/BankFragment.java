@@ -16,9 +16,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.kinda.alert.KAlertDialog;
 import com.mercearia.alano.R;
-import com.mercearia.alano.controllers.Produtos;
+import com.mercearia.alano.controllers.ProductsController;
 import com.mercearia.alano.database.FirebaseConnect;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.models.Product;
 import com.mercearia.alano.utils.Helper;
 import com.mercearia.alano.views.activities.MainActivity;
 
@@ -52,7 +52,7 @@ public class BankFragment extends Fragment {
 
         Context context = getContext();
 
-        FirebaseFirestore firestore = FirebaseConnect.getFireStore(context);
+        FirebaseFirestore firestore = FirebaseConnect.getFireStore(Objects.requireNonNull(context));
 
         KAlertDialog dialog = new KAlertDialog(Objects.requireNonNull(context), KAlertDialog.PROGRESS_TYPE);
         dialog.setTitleText("");
@@ -76,12 +76,12 @@ public class BankFragment extends Fragment {
 
 
         button_reset.setOnClickListener(v -> {
-            Produto produto = new Produto();
-            produto.setQuantidadeVendida(0);
-            produto.setValorEmCaixa(0);
-            Produtos produtos = new Produtos(produto, context);
+            Product product = new Product();
+            product.setQuantidadeVendida(0);
+            product.setValorEmCaixa(0);
+            ProductsController productsController = new ProductsController(product, context);
 
-            if (produtos.isReseted()) {
+            if (productsController.isReseted()) {
                 Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }

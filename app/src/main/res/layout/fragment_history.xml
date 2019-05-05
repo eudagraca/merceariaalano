@@ -33,6 +33,7 @@
             android:layout_height="wrap_content">
 
             <ScrollView
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="UselessParent">
@@ -41,7 +42,6 @@
                     android:id="@+id/rv_debit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     tools:listitem="@layout/history_list" />
             </ScrollView>
         </LinearLayout>

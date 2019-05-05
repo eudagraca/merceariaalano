@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="20dp"
         tools:ignore="UselessParent">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="new"
+            android:contentDescription="@string/logo"
             android:src="@drawable/ic_new" />
 
         <androidx.cardview.widget.CardView
@@ -36,14 +37,6 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Registo do Produto"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="24sp" />
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -55,7 +48,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Nome do produto"
+                            android:text="@string/nome_do_producto"
                             android:textColor="@color/colorPrimaryDark" />
 
                     </LinearLayout>
@@ -81,7 +74,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Preço de Compra"
+                            android:text="@string/preco_de_compra"
                             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -114,7 +107,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Preço a vender por cada"
+                            android:text="@string/preco_a_vender_por_cada"
                             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -139,7 +132,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Quantidade de total"
+                            android:text="@string/quantidade_total"
                             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -174,7 +167,7 @@
                         android:background="@drawable/editext"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:shadowColor="@color/colorPrimaryDark"
-                        android:text="Registar Produto"
+                        android:text="@string/registar_produto"
                         android:textAllCaps="false"
                         android:textColor="#fff"
                         android:textSize="14sp" />

@@ -25,7 +25,7 @@ import com.kinda.alert.KAlertDialog;
 import com.mercearia.alano.R;
 import com.mercearia.alano.adapters.ProdutoAdapter;
 import com.mercearia.alano.database.FirebaseConnect;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.models.Product;
 import com.mercearia.alano.utils.Helper;
 import com.mercearia.alano.views.activities.DetailsActivity;
 
@@ -37,7 +37,7 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class ProdutoFragment extends Fragment {
 
-    private List<Produto> mProdutoList;
+    private List<Product> mProductList;
     @Nullable
     private Context mContext;
     @Nullable
@@ -65,19 +65,15 @@ public class ProdutoFragment extends Fragment {
 
         int orientation = getResources().getConfiguration().orientation;
         GridLayoutManager mGridLayoutManager;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
-        mGridLayoutManager = new GridLayoutManager(mContext, 4);
-        }else {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            mGridLayoutManager = new GridLayoutManager(mContext, 4);
+        } else {
             mGridLayoutManager = new GridLayoutManager(mContext, 2);
         }
         rv_product.setHasFixedSize(true);
         rv_product.setLayoutManager(mGridLayoutManager);
 
-        pDialog = new KAlertDialog(Objects.requireNonNull(mContext), KAlertDialog.PROGRESS_TYPE);
-        Objects.requireNonNull(pDialog).getProgressHelper().setBarColor(Color.parseColor(Helper.COR_SECUNDARIA));
-        pDialog.setTitleText("");
-        pDialog.setCancelable(false);
-        pDialog.show();
+
         return view;
     }
 
@@ -90,11 +86,17 @@ public class ProdutoFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        pDialog = new KAlertDialog(Objects.requireNonNull(mContext), KAlertDialog.PROGRESS_TYPE);
+        Objects.requireNonNull(pDialog).getProgressHelper().setBarColor(Color.parseColor(Helper.COR_SECUNDARIA));
+        pDialog.setTitleText("");
+        pDialog.setCancelable(false);
+        pDialog.show();
+
         //Init my database!!
         FirebaseFirestore mFirestore = FirebaseConnect.getFireStore(Objects.requireNonNull(mContext));
 
         Objects.requireNonNull(pDialog).show();
-        mProdutoList = new ArrayList<>();
+        mProductList = new ArrayList<>();
         final ArrayList<String> produtos = new ArrayList<>();
 
         mFirestore.collection(Helper.COLLECTION_PRODUTOS).orderBy("nome")
@@ -102,10 +104,10 @@ public class ProdutoFragment extends Fragment {
                 .addOnSuccessListener(queryDocumentSnapshots -> {
 
                     for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
-                        Produto produto = new Produto();
-                        produto.setNome((String) snapshot.get("nome"));
-                        produto.setId(snapshot.getId());
-                        produtos.add(produto.getNome());
+                        Product product = new Product();
+                        product.setNome((String) snapshot.get("nome"));
+                        product.setId(snapshot.getId());
+                        produtos.add(product.getNome());
                     }
                     pDialog.dismiss();
 
@@ -116,23 +118,21 @@ public class ProdutoFragment extends Fragment {
                     spinnerDialog.bindOnSpinerListener((item, position) -> {
                         ll_produto.setVisibility(View.GONE);
                         pDialog.show();
-                        //mGridLayoutManager = new GridLayoutManager(mContext, 2);
-                       // rv_product.setLayoutManager(mGridLayoutManager);
                         mFirestore.collection(Helper.COLLECTION_PRODUTOS).whereEqualTo("nome", item)
                                 .get().addOnSuccessListener(querySnapshots -> {
                             if (!querySnapshots.isEmpty()) {
                                 ll_produto.setVisibility(View.VISIBLE);
                                 pDialog.dismiss();
-                                mProdutoList.clear();
+                                mProductList.clear();
                                 for (QueryDocumentSnapshot documentSnapshot : querySnapshots) {
-                                    Produto produto = new Produto();
-                                    produto.setNome(documentSnapshot.getString("nome"));
-                                    produto.setPrecoVenda(Float.parseFloat(String.valueOf(documentSnapshot.get("precoUnitario"))));
-                                    produto.setId(documentSnapshot.getId());
-                                    mProdutoList.add(produto);
+                                    Product product = new Product();
+                                    product.setNome(documentSnapshot.getString("nome"));
+                                    product.setPrecoVenda(Float.parseFloat(String.valueOf(documentSnapshot.get("precoUnitario"))));
+                                    product.setId(documentSnapshot.getId());
+                                    mProductList.add(product);
                                 }
 
-                                mProdutoAdapter = new ProdutoAdapter(mContext, mProdutoList);
+                                mProdutoAdapter = new ProdutoAdapter(mContext, mProductList);
                                 if (mProdutoAdapter.getItemCount() > 0) {
                                     rv_product.setAdapter(mProdutoAdapter);
                                     mProdutoAdapter.notifyDataSetChanged();
@@ -157,16 +157,16 @@ public class ProdutoFragment extends Fragment {
             if (!queryDocumentSnapshots.isEmpty()) {
                 ll_produto.setVisibility(View.VISIBLE);
                 pDialog.dismiss();
-                mProdutoList.clear();
+                mProductList.clear();
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    Produto produto = new Produto();
-                    produto.setNome(documentSnapshot.getString("nome"));
-                    produto.setPrecoVenda(Float.parseFloat(String.valueOf(documentSnapshot.get("precoUnitario"))));
-                    produto.setId(documentSnapshot.getId());
-                    mProdutoList.add(produto);
+                    Product product = new Product();
+                    product.setNome(documentSnapshot.getString("nome"));
+                    product.setPrecoVenda(Float.parseFloat(String.valueOf(documentSnapshot.get("precoUnitario"))));
+                    product.setId(documentSnapshot.getId());
+                    mProductList.add(product);
                 }
 
-                mProdutoAdapter = new ProdutoAdapter(mContext, mProdutoList);
+                mProdutoAdapter = new ProdutoAdapter(mContext, mProductList);
                 if (mProdutoAdapter.getItemCount() > 0) {
                     rv_product.setAdapter(mProdutoAdapter);
                     mProdutoAdapter.notifyDataSetChanged();
@@ -196,7 +196,11 @@ public class ProdutoFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (pDialog != null && pDialog.isShowing())
+        if (pDialog != null && pDialog.isShowing()) {
             pDialog.dismiss();
+            pDialog = null;
+        }
     }
+
+
 }

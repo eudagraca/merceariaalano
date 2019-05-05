@@ -11,14 +11,14 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mercearia.alano.R;
-import com.mercearia.alano.models.Produto;
+import com.mercearia.alano.models.Product;
 
 import java.util.List;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoViewHolder> {
 
     private final Context mContext;
-    private final List<Produto> mProdutoList;
+    private final List<Product> mProductList;
     private OnItemClick mListener;
 
     public interface OnItemClick {
@@ -29,9 +29,9 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoV
         mListener = listener;
     }
 
-    public ProdutoAdapter(Context mContext, List<Produto> mProdutoList) {
+    public ProdutoAdapter(Context mContext, List<Product> mProductList) {
         this.mContext = mContext;
-        this.mProdutoList = mProdutoList;
+        this.mProductList = mProductList;
     }
 
     @NonNull
@@ -48,16 +48,16 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoV
     @Override
     public void onBindViewHolder(@NonNull produtoViewHolder holder, int position) {
 
-        Produto produto = mProdutoList.get(position);
-        holder.tv_id.setText(produto.getId());
-        holder.tv_nome.setText(produto.getNome());
-        holder.tv_preco.setText(String.valueOf(produto.getPrecoVenda()));
+        Product product = mProductList.get(position);
+        holder.tv_id.setText(product.getId());
+        holder.tv_nome.setText(product.getNome());
+        holder.tv_preco.setText(String.valueOf(product.getPrecoVenda()));
     }
 
     @Override
     public int getItemCount() {
 
-        return mProdutoList.size();
+        return mProductList.size();
     }
 
     static class produtoViewHolder extends RecyclerView.ViewHolder {
@@ -70,7 +70,6 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.produtoV
             tv_nome = itemView.findViewById(R.id.tv_nome);
             tv_preco = itemView.findViewById(R.id.tv_price);
             tv_id = itemView.findViewById(R.id.tv_id);
-
 
             itemView.setOnClickListener(view -> {
                 if (itemClick != null) {

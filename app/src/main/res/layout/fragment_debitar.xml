@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/balanco"
-                android:paddingTop="30dp"
+                android:paddingTop="10dp"
                 android:src="@drawable/ic_balance_1" />
 
             <TextView
@@ -32,7 +32,7 @@
                 android:padding="20dp"
                 android:text="@string/balanceie_stock"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <View
                 android:layout_width="match_parent"

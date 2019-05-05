@@ -7,7 +7,7 @@ import com.mercearia.alano.utils.Helper;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Produto {
+public class Product {
     private String id;
     private String nome;
     private float precoVenda;
@@ -16,7 +16,7 @@ public class Produto {
     private String data;
     private float valorEmCaixa;
 
-    public Produto() {
+    public Product() {
     }
 
     public int getQuantidadeVendida() {
@@ -80,10 +80,6 @@ public class Produto {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public float getLucro() {
-        return (getPrecoVenda() * getQuantidade()) - (getPrecoCompra());
     }
 
     public float getValorEmCaixa() {
